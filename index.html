@@ -49,19 +49,36 @@
     }
 
     .cta-button {
-      background-color: #0057ff;
+      background-color: #bdc2cc;
       color: white;
       padding: 0.6rem 1.4rem;
       border: none;
       border-radius: 999px;
       font-weight: 600;
       cursor: pointer;
-      text-decoration: none;
+      text-decoration: white;
       transition: background-color 0.3s;
     }
 
     .cta-button:hover {
-      background-color: #0043cc;
+      background-color: #889ecb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #0057ff;
     }
 
     /* HERO */
@@ -125,6 +142,58 @@
 
     .screenshot-gallery img.phone:hover {
       transform: scale(1.05);
+    }
+
+    /* PRIVACY POLICY */
+    .privacy-section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .privacy-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #0057ff;
+      text-align: center;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 0.5rem;
+    }
+
+    .privacy-section p, .privacy-section li {
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section ul {
+      padding-left: 1.5rem;
+    }
+
+    .privacy-section .highlight {
+      background-color: #f1f5ff;
+      padding: 1rem;
+      border-radius: 10px;
+      border-left: 4px solid #0057ff;
+      margin: 1.5rem 0;
+    }
+
+    .privacy-section .contact-info {
+      background-color: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      text-align: center;
     }
 
     /* FORM */
@@ -225,9 +294,31 @@
     @media (max-width: 768px) {
       header {
         padding: 1rem 5%;
+        flex-direction: column;
+        gap: 1rem;
       }
+      
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
       form .row input {
         flex: 1 1 100%;
+      }
+      
+      .privacy-section {
+        margin: 2rem 1rem;
+        padding: 2rem 1rem;
+      }
+      
+      .privacy-section h2 {
+        font-size: 1.8rem;
+      }
+      
+      .privacy-section h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -240,11 +331,16 @@
       <img src="/images/M.png" alt="Moodish Icon" class="logo-icon" />
       <span>Moodish</span>
     </div>
-    <a href="#" class="cta-button">Download App</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#privacy-policy">Privacy</a>
+      <a href="#support-form">Support</a>
+      <a href="#" class="cta-button">Download App</a>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="home">
     <img src="/images/M.png" alt="Moodish logo" class="logo" />
     <h1>Let Your Body Talk</h1>
     <p class="subtitle">Mood insights powered by your heart, sleep, and movement</p>
@@ -254,6 +350,82 @@
       <img src="/images/Tired.png" alt="Tired Mood" class="phone" />
       <img src="/images/Nerve.png" alt="Nervous Mood" class="phone" />
       <img src="/images/Angry.png" alt="Angry Mood" class="phone" />
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section class="privacy-section" id="privacy-policy">
+    <h2>Privacy Policy</h2>
+    <p><strong>Last Updated:</strong> June 5, 2025</p>
+
+    <div class="highlight">
+      <p><strong>Your Privacy Matters:</strong> Moodish is designed with privacy at its core. All your health data stays on your device and is never transmitted to our servers or shared with third parties.</p>
+    </div>
+
+    <h3>1. Information We Collect</h3>
+    <p>Moodish accesses the following types of data to provide mood insights:</p>
+    <ul>
+      <li><strong>Health Data:</strong> Heart rate, step count, exercise minutes, and sleep analysis from Apple HealthKit</li>
+      <li><strong>App Usage Data:</strong> Your mood selections, challenge completion status, and app preferences</li>
+      <li><strong>Device Data:</strong> App launch history and notification preferences</li>
+    </ul>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>Your data is used exclusively to:</p>
+    <ul>
+      <li>Analyze your health metrics to infer your current mood</li>
+      <li>Provide personalized mood-based challenges and recommendations</li>
+      <li>Track your challenge completion progress and streaks</li>
+      <li>Send you notifications about mood changes and challenge reminders</li>
+      <li>Improve the accuracy of mood detection over time</li>
+    </ul>
+
+    <h3>3. Data Storage and Security</h3>
+    <div class="highlight">
+      <p><strong>Local Storage Only:</strong> All your personal data is stored locally on your Apple Watch and iPhone. We do not collect, transmit, or store any of your health information on external servers.</p>
+    </div>
+    <ul>
+      <li>Health data is accessed through Apple's secure HealthKit framework</li>
+      <li>App preferences are stored using secure iOS storage mechanisms</li>
+      <li>No personal data is transmitted over the internet</li>
+      <li>Data remains under your complete control at all times</li>
+    </ul>
+
+    <h3>4. Data Sharing</h3>
+    <p>We do not share, sell, or transmit your personal data to any third parties. Your information stays private and secure on your device.</p>
+
+    <h3>5. Third-Party Services</h3>
+    <p>Moodish integrates with:</p>
+    <ul>
+      <li><strong>Apple HealthKit:</strong> To access your health and fitness data (with your explicit permission)</li>
+      <li><strong>Apple Notifications:</strong> To send you mood and challenge notifications</li>
+    </ul>
+    <p>These integrations are governed by Apple's privacy policies and security standards.</p>
+
+    <h3>6. Your Rights and Controls</h3>
+    <p>You have complete control over your data:</p>
+    <ul>
+      <li><strong>HealthKit Permissions:</strong> You can revoke health data access at any time through your iPhone's Privacy settings</li>
+      <li><strong>Notification Control:</strong> You can disable notifications in your device settings</li>
+      <li><strong>Data Deletion:</strong> Uninstalling the app removes all stored data</li>
+      <li><strong>Manual Override:</strong> You can manually set your mood to override automatic detection</li>
+    </ul>
+
+    <h3>7. Children's Privacy</h3>
+    <p>Moodish is not intended for children under 13. We do not knowingly collect personal information from children under 13 years of age.</p>
+
+    <h3>8. Changes to This Policy</h3>
+    <p>We may update this Privacy Policy periodically. Any changes will be posted in the app and on this website. Continued use of the app after changes constitutes acceptance of the new policy.</p>
+
+    <h3>9. Contact Information</h3>
+    <div class="contact-info">
+      <p>If you have questions about this Privacy Policy or how your data is handled, please contact us:</p>
+      <p><strong>Email:</strong> adamoodish@gmail.com</p>
+      <p><strong>Developer:</strong> Dayan Abdulla</p>
+    </div>
+
+    <div class="highlight">
+      <p><strong>Remember:</strong> Your health data never leaves your device. Moodish is built to respect your privacy while helping you understand your emotional well-being.</p>
     </div>
   </section>
 
@@ -272,7 +444,8 @@
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Moodish. All rights reserved.
+    <p>&copy; 2025 Moodish. All rights reserved.</p>
+    <p><a href="#privacy-policy" style="color: #0057ff; text-decoration: none;">Privacy Policy</a> | <a href="#support-form" style="color: #0057ff; text-decoration: none;">Contact Us</a></p>
   </footer>
 
   <!-- FLOATING CONTACT BUTTON -->
